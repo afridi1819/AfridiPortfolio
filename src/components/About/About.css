@@ -1,0 +1,49 @@
+.about {
+    padding: 80px 8%;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-text {
+    width: 60%;
+}
+
+
+.about-text p,
+.about-details p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-details {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-details p {
+    margin: 0;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 5%;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-details {
+        width: 100%;
+    }
+}
