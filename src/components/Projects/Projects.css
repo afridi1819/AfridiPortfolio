@@ -1,0 +1,553 @@
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.projects-section {
+    width: 92%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 80px 0 90px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.projects-heading {
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.projects-subtitle {
+    margin: 0 0 8px;
+
+    color: #b44cff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.projects-heading h2 {
+    margin: 0 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+
+.projects-heading h2 svg {
+    width: 20px;
+    height: 20px;
+
+    color: #b44cff;
+
+    filter:
+        drop-shadow(0 0 6px rgba(180, 76, 255, 0.8));
+}
+
+
+.projects-heading-description {
+    margin: 0;
+
+    color: #aaa4b5;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+    min-width: 0;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            rgba(22, 12, 40, 0.9),
+            rgba(7, 7, 20, 0.96));
+
+    border:
+        1px solid rgba(168, 85, 247, 0.28);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 18px rgba(126, 34, 206, 0.07),
+        inset 0 0 18px rgba(168, 85, 247, 0.025);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* DECORATIVE GLOW */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -90px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(168, 85, 247, 0.14);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(192, 80, 255, 0.65);
+
+    box-shadow:
+        0 0 28px rgba(168, 85, 247, 0.18),
+        inset 0 0 18px rgba(168, 85, 247, 0.04);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.project-number {
+    color:
+        rgba(196, 92, 255, 0.8);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.featured-badge {
+    padding: 5px 11px;
+
+    color: #d9b8ff;
+
+    background:
+        rgba(168, 85, 247, 0.1);
+
+    border:
+        1px solid rgba(168, 85, 247, 0.3);
+
+    border-radius: 50px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.project-content {
+    margin-bottom: 24px;
+}
+
+
+.project-content h3 {
+    margin: 0 0 13px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 650;
+}
+
+
+.project-content p {
+    margin: 0;
+
+    color: #aaa4b5;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: auto;
+    margin-bottom: 25px;
+}
+
+
+.technology-tag {
+    padding: 7px 10px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #d7cce3;
+
+    background:
+        rgba(20, 12, 36, 0.8);
+
+    border:
+        1px solid rgba(168, 85, 247, 0.23);
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+.technology-tag svg {
+    width: 13px;
+    height: 13px;
+
+    color: #b44cff;
+}
+
+
+/* =========================================
+   PROJECT LINKS
+========================================= */
+
+.project-links {
+    padding-top: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.project-link {
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.project-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+.project-link:hover {
+    transform: translateY(-2px);
+}
+
+
+/* GITHUB BUTTON */
+
+.github-link {
+    color: #ddd7e8;
+
+    background:
+        rgba(15, 10, 27, 0.8);
+
+    border:
+        1px solid rgba(168, 85, 247, 0.3);
+}
+
+
+.github-link:hover {
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.18);
+}
+
+
+/* DEMO BUTTON */
+
+.demo-link {
+    color: #ffffff;
+
+    background:
+        linear-gradient(100deg,
+            #7126d9,
+            #9d32df,
+            #d946a3);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 14px rgba(168, 85, 247, 0.2);
+}
+
+
+.demo-link:hover {
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+
+/* =========================================
+   VIEW MORE PROJECTS
+========================================= */
+
+.projects-more {
+    margin-top: 38px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.projects-more a {
+    padding: 12px 20px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #c45cff;
+
+    border:
+        1px solid rgba(168, 85, 247, 0.32);
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        gap 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.projects-more a svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+.projects-more a:hover {
+    gap: 14px;
+
+    transform: translateY(-2px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 18px rgba(168, 85, 247, 0.2);
+}
+
+
+/* =========================================
+   SMALL LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .projects-section {
+        width: 90%;
+
+        padding: 60px 0 70px;
+    }
+
+
+    .projects-heading {
+        margin-bottom: 35px;
+    }
+
+
+    .projects-heading h2 {
+        font-size: 29px;
+    }
+
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+    .projects-section {
+        padding: 50px 0 60px;
+    }
+
+
+    .projects-heading h2 {
+        font-size: 26px;
+    }
+
+
+    .projects-heading-description {
+        font-size: 13px;
+    }
+
+
+    .project-card {
+        padding: 20px;
+    }
+
+
+    .project-content h3 {
+        font-size: 20px;
+    }
+
+
+    .project-links {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .project-link {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card,
+    .project-link,
+    .projects-more a {
+        transition: none;
+    }
+
+}
