@@ -1,0 +1,348 @@
+/* ========================================
+   SKILLS SECTION
+======================================== */
+
+.skills-section {
+    width: 94%;
+    max-width: 1800px;
+
+    margin: 0 auto;
+    padding: 35px 0 45px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.skills-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin: 0 0 25px 0;
+
+    color: #ffffff !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+.skills-heading span {
+    color: #b34cff;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    text-shadow:
+        0 0 5px #a855f7,
+        0 0 10px #9333ea,
+        0 0 18px rgba(168, 85, 247, 0.8);
+}
+
+
+/* ========================================
+   SKILLS GRID
+======================================== */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: 16px;
+
+    align-items: start;
+}
+
+
+/* ========================================
+   SKILL CARD
+======================================== */
+
+.skill-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px 15px 20px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(20, 12, 38, 0.92),
+            rgba(7, 7, 20, 0.96));
+
+    border: 1px solid rgba(168, 85, 247, 0.35);
+
+    border-radius: 15px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 15px rgba(126, 34, 206, 0.08),
+        inset 0 0 15px rgba(168, 85, 247, 0.03);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(192, 80, 255, 0.7);
+
+    box-shadow:
+        0 0 25px rgba(168, 85, 247, 0.2),
+        inset 0 0 15px rgba(168, 85, 247, 0.05);
+}
+
+
+/* ========================================
+   CARD TITLE
+======================================== */
+
+.skill-card-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 18px;
+}
+
+
+.skill-card-title h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+
+/* ========================================
+   LUCIDE ICON
+======================================== */
+
+.skill-icon {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    color: #c45cff;
+
+    stroke-width: 1.8;
+
+    filter:
+        drop-shadow(0 0 5px rgba(196, 92, 255, 0.9));
+}
+
+
+/* ========================================
+   SKILL LIST
+======================================== */
+
+.skill-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* ========================================
+   INDIVIDUAL SKILL
+======================================== */
+
+.skill-item {
+    width: 100%;
+}
+
+
+/* ========================================
+   SKILL NAME AND PERCENTAGE
+======================================== */
+
+.skill-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 5px;
+
+    margin-bottom: 6px;
+
+    color: #e8e8ee;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+.skill-info span:first-child {
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.skill-info span:last-child {
+    flex-shrink: 0;
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   PROGRESS TRACK
+======================================== */
+
+.progress-track {
+    width: 100%;
+    height: 7px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   PROGRESS FILL
+======================================== */
+
+.progress-fill {
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            #6d28d9 0%,
+            #9333ea 45%,
+            #d946ef 100%);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 6px rgba(168, 85, 247, 0.8),
+        0 0 10px rgba(217, 70, 239, 0.35);
+
+    transition: width 1s ease;
+}
+
+
+/* ========================================
+   LARGE LAPTOP
+======================================== */
+
+@media (max-width: 1400px) {
+
+    .skills-section {
+        width: 95%;
+    }
+
+    .skills-grid {
+        gap: 12px;
+    }
+
+    .skill-card {
+        padding: 17px 13px 19px;
+    }
+
+}
+
+
+/* ========================================
+   TABLET / SMALL LAPTOP
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .skills-section {
+        width: 90%;
+
+        padding: 30px 0 40px;
+    }
+
+    .skills-heading {
+        font-size: 26px;
+
+        margin-bottom: 22px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+
+    .skills-section {
+        width: 90%;
+    }
+
+    .skills-heading {
+        font-size: 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 20px 18px;
+    }
+
+    .skill-info {
+        font-size: 12px;
+    }
+
+}
