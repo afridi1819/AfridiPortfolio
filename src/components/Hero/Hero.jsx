@@ -1,47 +1,193 @@
-import "./Hero.css"
+import "./Hero.css";
+
+import {
+    LuDownload,
+    LuSend,
+    LuFileText,
+} from "react-icons/lu";
+
+import {
+    FaGithub,
+    FaLinkedinIn,
+    FaJava,
+    FaReact,
+} from "react-icons/fa";
+
+import {
+    SiGmail,
+    SiSpring,
+    SiMysql,
+} from "react-icons/si";
+
+
 function Hero() {
     return (
-        <section className="hero">
+        <section className="hero" id="home">
+
+            {/* LEFT SIDE */}
+
             <div className="hero-content">
-                <p className="hero-intro">  Hello, I'm</p>
+
+                <p className="hero-intro">
+                    Hi, I’m
+                </p>
 
 
-                <h1 className="hero-name">   Afridi Shaikh     </h1>
+                <h1 className="hero-name">
+                    Shaikh <span>Afridi</span> Ismail
+                </h1>
 
-                <h2 className="hero-rounded-end-pill">Full Stack Developer</h2>
+
+                <h2 className="hero-role">
+                    Full Stack
+                    <span> Java Developer</span>
+                </h2>
+
+
+                <div className="hero-tags">
+
+                    <span>PG-DAC Student</span>
+
+                    <span>Java Developer</span>
+
+                    <span>Spring Boot Developer</span>
+
+                    <span>React Developer</span>
+
+                </div>
+
 
                 <p className="hero-description">
-                    I build responsive and user-friendly web applications
-                    using modern technologies.
+                    Building scalable, secure and high-performance web applications
+                    using Java, Spring Boot, React, MySQL and modern technologies.
                 </p>
+
+
+                {/* BUTTONS */}
+
                 <div className="hero-actions">
-                    <a href="#projects" className="btn btn-primary">View Projects</a>
-                    <a href="public\resume.pdf" download className="btn btn-secondary">Download Resume</a>
+
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="hero-btn resume-btn"
+                    >
+                        <LuDownload />
+                        Download Resume
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        className="hero-btn contact-btn"
+                    >
+                        <LuSend />
+                        Contact Me
+                    </a>
+
                 </div>
+
+
+                {/* SOCIAL ICONS */}
+
                 <div className="hero-socials">
+
                     <a
                         href="https://github.com/afridi1819"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="GitHub"
                     >
-                        GitHub
+                        <FaGithub />
                     </a>
+
 
                     <a
                         href="#YOUR_LINKEDIN_PROFILE_URL"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="LinkedIn"
                     >
-                        LinkedIn
+                        <FaLinkedinIn />
                     </a>
+
+
+                    <a
+                        href="mailto:YOUR_EMAIL"
+                        aria-label="Email"
+                    >
+                        <SiGmail />
+                    </a>
+
+
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Resume"
+                    >
+                        <LuFileText />
+                    </a>
+
                 </div>
+
             </div>
 
-            <div className="hero-image">
-                <img src="public\profile.png" alt="My_Profile" />
+
+            {/* RIGHT SIDE */}
+
+            <div className="hero-visual">
+
+
+                {/* JAVA ICON */}
+
+                <div className="tech-card java-card">
+                    <FaJava />
+                </div>
+
+
+                {/* SPRING ICON */}
+
+                <div className="tech-card spring-card">
+                    <SiSpring />
+                </div>
+
+
+                {/* REACT ICON */}
+
+                <div className="tech-card react-card">
+                    <FaReact />
+                </div>
+
+
+                {/* MYSQL ICON */}
+
+                <div className="tech-card mysql-card">
+                    <SiMysql />
+                </div>
+
+
+                {/* PROFILE IMAGE */}
+
+                <div className="profile-glow">
+
+                    <div className="profile-ring">
+
+                        <img
+                            src="/profile.png"
+                            alt="Afridi profile"
+                            className="profile-image"
+                        />
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
-
-    )
+    );
 }
-export default Hero
+
+
+export default Hero;
