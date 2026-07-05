@@ -1,10 +1,12 @@
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero"
 import About from './components/About/About';
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Education from "./components/Education/Education";
-
+import Contact from "./components/contact/Contact";
+import "./App.css"
 function App(){
 
   return(
@@ -15,7 +17,10 @@ function App(){
     <About />
     <Skills />
     <Projects />
+    <div className="education-contact-wrapper">
     <Education />
+    <Contact/>
+    </div>
     </>
 
   );
