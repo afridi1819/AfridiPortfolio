@@ -1,0 +1,17 @@
+.education-contact-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding: 25px 30px;
+    box-sizing: border-box;
+}
+
+.education-contact-wrapper .education-section {
+    width: 40%;
+    min-width: 0;
+}
+
+.education-contact-wrapper .contact-section {
+    width: 60%;
+    min-width: 0;
+}
