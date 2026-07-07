@@ -1,0 +1,422 @@
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(3, 3, 13, 0.9);
+
+    border-bottom:
+        1px solid rgba(168, 85, 247, 0.15);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 1000;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ===================================
+   NAVBAR CONTAINER
+=================================== */
+
+.navbar-container {
+    max-width: 1400px;
+    height: 68px;
+
+    margin: 0 auto;
+    padding: 0 45px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ===================================
+   NAME / LOGO
+=================================== */
+
+.navbar-logo {
+    margin-right: auto;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+.navbar-logo:hover {
+    color: #c084fc;
+
+    text-shadow:
+        0 0 12px rgba(168, 85, 247, 0.5);
+}
+
+
+/* ===================================
+   NAVIGATION MENU
+=================================== */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* ===================================
+   NAVIGATION LINKS
+=================================== */
+
+.navbar-menu a {
+    position: relative;
+
+    padding: 8px 0;
+
+    color: #aaa6b5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.navbar-menu a:hover {
+    color: #ffffff;
+}
+
+
+/* NAVIGATION UNDERLINE */
+
+.navbar-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            #7c3aed,
+            #c084fc);
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+.navbar-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ===================================
+   NAVBAR ACTIONS
+=================================== */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: 28px;
+}
+
+
+/* ===================================
+   THEME TOGGLE BUTTON
+=================================== */
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: #c084fc;
+
+    font-size: 19px;
+
+    background:
+        rgba(124, 58, 237, 0.1);
+
+    border:
+        1px solid rgba(168, 85, 247, 0.3);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+
+    background:
+        rgba(124, 58, 237, 0.2);
+
+    border-color:
+        rgba(192, 132, 252, 0.6);
+
+    box-shadow:
+        0 0 12px rgba(168, 85, 247, 0.25);
+}
+
+
+.theme-toggle svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* ===================================
+   MOBILE MENU BUTTON
+=================================== */
+
+.menu-toggle {
+    display: none;
+
+    width: 36px;
+    height: 36px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: #c084fc;
+
+    font-size: 23px;
+
+    background:
+        rgba(124, 58, 237, 0.1);
+
+    border:
+        1px solid rgba(168, 85, 247, 0.3);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.menu-toggle:hover {
+    background:
+        rgba(124, 58, 237, 0.2);
+
+    border-color:
+        rgba(192, 132, 252, 0.6);
+}
+
+
+/* ===================================
+   LIGHT MODE - NAVBAR
+=================================== */
+
+body.light-mode .navbar {
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border-bottom:
+        1px solid rgba(124, 58, 237, 0.15);
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+body.light-mode .navbar-logo {
+    color: #18181b;
+}
+
+
+body.light-mode .navbar-logo:hover {
+    color: #7c3aed;
+}
+
+
+body.light-mode .navbar-menu a {
+    color: #52525b;
+}
+
+
+body.light-mode .navbar-menu a:hover {
+    color: #7c3aed;
+}
+
+
+body.light-mode .theme-toggle,
+body.light-mode .menu-toggle {
+    color: #7c3aed;
+
+    background:
+        rgba(124, 58, 237, 0.07);
+
+    border-color:
+        rgba(124, 58, 237, 0.2);
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 900px) {
+
+    .navbar-container {
+        height: 65px;
+
+        padding: 0 25px;
+    }
+
+
+    .navbar-menu {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+
+        background:
+            rgba(3, 3, 13, 0.98);
+
+        border-bottom:
+            1px solid rgba(168, 85, 247, 0.2);
+
+        transform: translateY(-150%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+
+    .navbar-menu.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    .navbar-actions {
+        margin-left: 15px;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    body.light-mode .navbar-menu {
+        background:
+            rgba(255, 255, 255, 0.98);
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 576px) {
+
+    .navbar-container {
+        padding: 0 15px;
+    }
+
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+
+    .navbar-actions {
+        gap: 6px;
+
+        margin-left: 8px;
+    }
+
+
+    .theme-toggle,
+    .menu-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .navbar-menu {
+        padding: 22px 15px;
+
+        gap: 18px;
+    }
+
+}
