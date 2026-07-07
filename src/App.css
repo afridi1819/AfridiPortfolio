@@ -15,3 +15,38 @@
     width: 60%;
     min-width: 0;
 }
+
+/* ===================================
+   EDUCATION + CONTACT RESPONSIVE
+=================================== */
+
+@media (max-width: 1000px) {
+
+    .education-contact-wrapper {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding:
+            25px 20px;
+    }
+
+
+    .education-contact-wrapper .education-section,
+    .education-contact-wrapper .contact-section {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .education-contact-wrapper {
+        gap: 24px;
+
+        padding:
+            20px 12px;
+    }
+
+}

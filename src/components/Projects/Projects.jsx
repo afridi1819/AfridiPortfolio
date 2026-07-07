@@ -34,7 +34,7 @@ const projectsData = [
             "MySQL",
         ],
 
-        github: "https://github.com/afridi1819",
+        github: "https://github.com/goldenagro49/CdacFinalProject",
 
         demo: "#",
 

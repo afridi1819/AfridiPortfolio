@@ -21,12 +21,16 @@ import {
 
 
 function Hero() {
+
     return (
+
         <section className="hero" id="home">
+
 
             {/* LEFT SIDE */}
 
             <div className="hero-content">
+
 
                 <p className="hero-intro">
                     Hi, I’m
@@ -44,6 +48,8 @@ function Hero() {
                 </h2>
 
 
+                {/* TAGS */}
+
                 <div className="hero-tags">
 
                     <span>PG-DAC Student</span>
@@ -57,6 +63,8 @@ function Hero() {
                 </div>
 
 
+                {/* DESCRIPTION */}
+
                 <p className="hero-description">
                     Building scalable, secure and high-performance web applications
                     using Java, Spring Boot, React, MySQL and modern technologies.
@@ -67,23 +75,31 @@ function Hero() {
 
                 <div className="hero-actions">
 
+
+                    {/* DOWNLOAD RESUME */}
+
                     <a
                         href="/resume.pdf"
                         download
                         className="hero-btn resume-btn"
                     >
                         <LuDownload />
+
                         Download Resume
                     </a>
 
+
+                    {/* CONTACT */}
 
                     <a
                         href="#contact"
                         className="hero-btn contact-btn"
                     >
                         <LuSend />
+
                         Contact Me
                     </a>
+
 
                 </div>
 
@@ -92,42 +108,58 @@ function Hero() {
 
                 <div className="hero-socials">
 
+
+                    {/* GITHUB */}
+
                     <a
                         href="https://github.com/afridi1819"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         aria-label="GitHub"
+                        title="GitHub"
                     >
                         <FaGithub />
                     </a>
 
 
+                    {/* LINKEDIN */}
+
                     <a
-                        href="#YOUR_LINKEDIN_PROFILE_URL"
+                        href="https://www.linkedin.com/in/afridi-shaikh-137659261"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         aria-label="LinkedIn"
+                        title="LinkedIn"
                     >
                         <FaLinkedinIn />
                     </a>
 
 
+                    {/* GMAIL */}
+
                     <a
-                        href="mailto:YOUR_EMAIL"
-                        aria-label="Email"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=shaikh19afridi@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Send Email"
+                        title="Send Email"
                     >
                         <SiGmail />
                     </a>
 
 
+                    {/* VIEW RESUME */}
+
                     <a
                         href="/resume.pdf"
                         target="_blank"
-                        rel="noreferrer"
-                        aria-label="Resume"
+                        rel="noopener noreferrer"
+                        aria-label="View Resume"
+                        title="View Resume"
                     >
                         <LuFileText />
                     </a>
+
 
                 </div>
 
@@ -183,10 +215,14 @@ function Hero() {
 
                 </div>
 
+
             </div>
 
+
         </section>
+
     );
+
 }
 
 
