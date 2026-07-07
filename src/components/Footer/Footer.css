@@ -1,0 +1,314 @@
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer {
+    width: 100%;
+
+    position: relative;
+
+    border-top:
+        1px solid var(--soft-divider);
+
+    background:
+        rgba(3, 3, 13, 0.45);
+
+    transition:
+        background 0.75s ease,
+        border-color 0.75s ease;
+}
+
+
+/* ===================================
+   FOOTER CONTAINER
+=================================== */
+
+.footer-container {
+    width: 90%;
+    max-width: 1450px;
+
+    min-height: 80px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* ===================================
+   FOOTER LOGO
+=================================== */
+
+.footer-logo {
+    width: fit-content;
+
+    color: var(--text-heading);
+
+    font-size: 24px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.footer-logo span {
+    margin-left: 2px;
+
+    color: var(--accent-purple);
+
+    text-shadow:
+        0 0 10px rgba(168, 85, 247, 0.45);
+}
+
+
+.footer-logo:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ===================================
+   COPYRIGHT
+=================================== */
+
+.footer-copyright {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* ===================================
+   BUILT WITH
+=================================== */
+
+.footer-built {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+.footer-built span {
+    color: var(--accent-purple);
+
+    font-weight: 600;
+}
+
+
+.footer-heart {
+    color: #f05d8f;
+
+    fill: #f05d8f;
+
+    font-size: 15px;
+
+    filter:
+        drop-shadow(0 0 5px rgba(240, 93, 143, 0.45));
+
+    animation:
+        heartBeat 1.8s ease-in-out infinite;
+}
+
+
+/* ===================================
+   HEART ANIMATION
+=================================== */
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+
+/* ===================================
+   SCROLL TO TOP BUTTON
+=================================== */
+
+.scroll-top-btn {
+    width: 48px;
+    height: 48px;
+
+    position: absolute;
+
+    right: 30px;
+    top: -24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(145deg,
+            #7c3aed,
+            #581c87);
+
+    border:
+        1px solid rgba(192, 132, 252, 0.45);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 18px rgba(126, 34, 206, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.scroll-top-btn svg {
+    width: 22px;
+    height: 22px;
+
+    stroke-width: 2.4;
+}
+
+
+.scroll-top-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(168, 85, 247, 0.55);
+}
+
+
+/* ===================================
+   LIGHT MODE
+=================================== */
+
+body.light-mode .footer {
+    background:
+        rgba(255, 255, 255, 0.55);
+}
+
+
+body.light-mode .scroll-top-btn {
+    box-shadow:
+        0 6px 20px rgba(86, 45, 110, 0.20);
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 850px) {
+
+    .footer-container {
+        min-height: auto;
+
+        padding: 28px 0;
+
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+
+        gap: 14px;
+    }
+
+
+    .footer-built {
+        justify-content: center;
+    }
+
+
+    .scroll-top-btn {
+        right: 20px;
+    }
+
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 520px) {
+
+    .footer-container {
+        width: 88%;
+
+        padding: 25px 0;
+    }
+
+
+    .footer-logo {
+        font-size: 21px;
+    }
+
+
+    .footer-copyright,
+    .footer-built {
+        font-size: 11px;
+    }
+
+
+    .scroll-top-btn {
+        width: 42px;
+        height: 42px;
+
+        top: -21px;
+        right: 15px;
+    }
+
+
+    .scroll-top-btn svg {
+        width: 19px;
+        height: 19px;
+    }
+
+}
+
+
+/* ===================================
+   REDUCED MOTION
+=================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-heart {
+        animation: none;
+    }
+
+
+    .footer-logo,
+    .scroll-top-btn {
+        transition: none;
+    }
+
+}
