@@ -27,7 +27,7 @@ function Footer() {
                     href="#home"
                     className="footer-logo"
                 >
-                   <span>A</span>fridi<span>&lt;/&gt;</span>
+                    <span>A</span>fridi<span>&lt;/&gt;</span>
                 </a>
 
 
