@@ -80,7 +80,7 @@ function Navbar() {
                     className="navbar-logo"
                     onClick={closeMenu}
                 >
-                    Afridi Shaikh
+                    <span>A</span>fridi Shaikh<span>&lt;/&gt;</span>
                 </a>
 
 
