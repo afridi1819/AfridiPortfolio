@@ -6,16 +6,104 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* Space for sticky navbar */
-
 section {
     scroll-margin-top: 80px;
 }
 
 
 /* ===================================
-   DEFAULT DARK THEME
+   DARK THEME VARIABLES
+=================================== */
+
+:root {
+    /* Page */
+    --page-bg-start: #11041f;
+    --page-bg-middle: #060611;
+    --page-bg-end: #03030a;
+
+    /* Main text */
+    --text-primary: #ffffff;
+    --text-heading: #ffffff;
+    --text-secondary: #aaa4b5;
+    --text-soft: #c9c4d4;
+    --text-muted: #a99fb9;
+
+    /* Cards */
+    --card-bg-start: rgba(22, 12, 40, 0.90);
+    --card-bg-end: rgba(7, 7, 20, 0.96);
+
+    --glass-bg: rgba(18, 12, 35, 0.75);
+    --panel-bg: rgba(10, 8, 25, 0.85);
+
+    /* Small elements */
+    --tag-bg: rgba(20, 12, 36, 0.80);
+    --button-dark-bg: rgba(15, 10, 27, 0.80);
+    --input-bg: rgba(18, 13, 35, 0.85);
+    --input-focus-bg: rgba(25, 17, 48, 0.95);
+
+    /* Borders */
+    --purple-border: rgba(168, 85, 247, 0.28);
+    --divider-border: rgba(255, 255, 255, 0.10);
+    --soft-divider: rgba(255, 255, 255, 0.06);
+
+    /* Progress */
+    --progress-track: rgba(255, 255, 255, 0.14);
+
+    /* Shadow */
+    --card-shadow: rgba(0, 0, 0, 0.25);
+
+    /* Section backgrounds */
+    --section-solid-bg: transparent;
+
+    /* Accent */
+    --accent-purple: #b44cff;
+    --accent-light: #c084fc;
+}
+
+
+/* ===================================
+   LIGHT THEME VARIABLES
+=================================== */
+
+body.light-mode {
+    --page-bg-start: #eee5ff;
+    --page-bg-middle: #f8f5ff;
+    --page-bg-end: #f5f4fa;
+
+    --text-primary: #18131f;
+    --text-heading: #21172c;
+    --text-secondary: #625a6d;
+    --text-soft: #51495c;
+    --text-muted: #756b80;
+
+    --card-bg-start: rgba(255, 255, 255, 0.96);
+    --card-bg-end: rgba(247, 242, 252, 0.98);
+
+    --glass-bg: rgba(255, 255, 255, 0.82);
+    --panel-bg: rgba(255, 255, 255, 0.88);
+
+    --tag-bg: rgba(247, 240, 255, 0.92);
+    --button-dark-bg: rgba(250, 247, 255, 0.95);
+    --input-bg: rgba(250, 247, 255, 0.95);
+    --input-focus-bg: #ffffff;
+
+    --purple-border: rgba(126, 34, 206, 0.25);
+    --divider-border: rgba(53, 35, 70, 0.12);
+    --soft-divider: rgba(53, 35, 70, 0.10);
+
+    --progress-track: rgba(69, 48, 82, 0.14);
+
+    --card-shadow: rgba(70, 45, 90, 0.12);
+
+    --section-solid-bg: transparent;
+
+    --accent-purple: #9333ea;
+    --accent-light: #8b2bd1;
+}
+
+
+/* ===================================
+   BODY
 =================================== */
 
 body {
@@ -23,11 +111,11 @@ body {
 
     background:
         radial-gradient(circle at 50% 20%,
-            #11041f 0%,
-            #060611 40%,
-            #03030a 100%);
+            var(--page-bg-start) 0%,
+            var(--page-bg-middle) 40%,
+            var(--page-bg-end) 100%);
 
-    color: white;
+    color: var(--text-primary);
 
     font-family:
         Arial,
@@ -39,17 +127,59 @@ body {
         color 0.4s ease;
 }
 
-
 /* ===================================
-   LIGHT THEME
+   SMOOTH THEME TRANSITIONS
 =================================== */
 
-body.light-mode {
-    background:
-        radial-gradient(circle at 50% 20%,
-            #f2eaff 0%,
-            #faf8ff 40%,
-            #f7f7fc 100%);
-
-    color: #18181b;
+body,
+.navbar,
+.hero-intro,
+.hero-name,
+.hero-role,
+.hero-description,
+.hero-tags span,
+.contact-btn,
+.hero-socials a,
+.tech-card,
+.about-container,
+.about-intro,
+.about-intro h2,
+.about-intro p,
+.detail-label,
+.detail-value,
+.detail-icon,
+.about-label-icon,
+.skill-card,
+.skills-heading,
+.skill-card-title h3,
+.skill-info,
+.progress-track,
+.project-card,
+.projects-heading h2,
+.projects-heading-description,
+.project-content h3,
+.project-content p,
+.technology-tag,
+.project-links,
+.github-link,
+.education-section,
+.education-container,
+.education-heading h2,
+.education-details h3,
+.education-details p,
+.contact-section,
+.contact-container,
+.contact-heading h2,
+.contact-form input,
+.contact-form textarea,
+.contact-info-icon,
+.contact-info-text h4,
+.contact-info-text p,
+.contact-info-text a {
+    transition:
+        background-color 0.75s ease,
+        background 0.75s ease,
+        color 0.65s ease,
+        border-color 0.75s ease,
+        box-shadow 0.75s ease;
 }

@@ -764,3 +764,104 @@
     }
 
 }
+
+/* =========================================
+   THEME SUPPORT
+========================================= */
+
+.hero-intro {
+    color: var(--text-soft);
+}
+
+.hero-name {
+    color: var(--text-heading);
+}
+
+.hero-role {
+    color: var(--text-heading);
+}
+
+.hero-description {
+    color: var(--text-secondary);
+}
+
+
+/* TECHNOLOGY TAGS */
+
+.hero-tags span {
+    color: var(--text-soft);
+
+    background: var(--tag-bg);
+
+    border-color: var(--purple-border);
+}
+
+
+/* CONTACT BUTTON */
+
+.contact-btn {
+    color: var(--text-primary);
+
+    background: var(--button-dark-bg);
+
+    border-color: var(--purple-border);
+}
+
+
+/* SOCIAL ICONS */
+
+.hero-socials a {
+    color: var(--text-soft);
+
+    background: var(--button-dark-bg);
+
+    border-color: var(--purple-border);
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-image {
+    background: var(--card-bg-end);
+}
+
+
+/* FLOATING TECHNOLOGY CARDS */
+
+.tech-card {
+    background:
+        linear-gradient(145deg,
+            var(--card-bg-start),
+            var(--card-bg-end));
+
+    border-color: var(--purple-border);
+}
+
+
+/* =========================================
+   LIGHT MODE REFINEMENTS
+========================================= */
+
+body.light-mode .hero-tags span {
+    box-shadow:
+        0 4px 14px rgba(86, 45, 110, 0.08);
+}
+
+
+body.light-mode .contact-btn {
+    box-shadow:
+        0 4px 16px rgba(86, 45, 110, 0.08);
+}
+
+
+body.light-mode .hero-socials a {
+    box-shadow:
+        0 4px 14px rgba(86, 45, 110, 0.08);
+}
+
+
+body.light-mode .tech-card {
+    box-shadow:
+        0 8px 24px rgba(86, 45, 110, 0.12),
+        inset 0 0 12px rgba(168, 85, 247, 0.04);
+}

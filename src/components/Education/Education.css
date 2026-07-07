@@ -274,3 +274,60 @@
     }
 
 }
+
+/* =========================
+   THEME SUPPORT
+========================= */
+
+.education-section {
+    background: var(--section-solid-bg);
+}
+
+
+.education-container {
+    background:
+        radial-gradient(circle at top left,
+            rgba(147, 51, 234, 0.08),
+            transparent 35%),
+        var(--panel-bg);
+
+    border-color: var(--purple-border);
+}
+
+
+.education-heading h2 {
+    color: var(--text-heading);
+}
+
+
+.education-details h3 {
+    color: var(--text-heading);
+}
+
+
+.education-details p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   LIGHT MODE REFINEMENTS
+========================= */
+
+body.light-mode .education-container {
+    box-shadow:
+        0 10px 30px rgba(70, 45, 90, 0.10);
+}
+
+
+body.light-mode .education-year {
+    color: #9333ea;
+}
+
+
+body.light-mode .timeline-dot {
+    border-color: #c084fc;
+
+    box-shadow:
+        0 0 8px rgba(147, 51, 234, 0.45);
+}

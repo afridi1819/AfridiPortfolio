@@ -2,29 +2,72 @@ import { useEffect, useState } from "react"
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi"
 import "./Navbar.css"
 
+
 function Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isLightMode, setIsLightMode] = useState(false)
 
+
+    /* ===================================
+       THEME STATE
+    =================================== */
+
+    const [isLightMode, setIsLightMode] = useState(() => {
+
+        const savedTheme = localStorage.getItem("theme")
+
+        return savedTheme === "light"
+
+    })
+
+
+    /* ===================================
+       APPLY AND SAVE THEME
+    =================================== */
 
     useEffect(() => {
 
         if (isLightMode) {
+
             document.body.classList.add("light-mode")
+
+            localStorage.setItem("theme", "light")
+
         } else {
+
             document.body.classList.remove("light-mode")
+
+            localStorage.setItem("theme", "dark")
+
         }
 
     }, [isLightMode])
 
 
+    /* ===================================
+       CLOSE MOBILE MENU
+    =================================== */
+
     const closeMenu = () => {
+
         setIsMenuOpen(false)
+
+    }
+
+
+    /* ===================================
+       TOGGLE THEME
+    =================================== */
+
+    const toggleTheme = () => {
+
+        setIsLightMode((currentMode) => !currentMode)
+
     }
 
 
     return (
+
         <nav className="navbar">
 
             <div className="navbar-container">
@@ -105,16 +148,23 @@ function Navbar() {
 
                     <button
                         className="theme-toggle"
-                        onClick={() =>
-                            setIsLightMode(!isLightMode)
+                        onClick={toggleTheme}
+                        aria-label={
+                            isLightMode
+                                ? "Switch to dark mode"
+                                : "Switch to light mode"
                         }
-                        aria-label="Toggle light and dark mode"
+                        title={
+                            isLightMode
+                                ? "Dark mode"
+                                : "Light mode"
+                        }
                     >
 
                         {
                             isLightMode
-                                ? <FiSun />
-                                : <FiMoon />
+                                ? <FiMoon />
+                                : <FiSun />
                         }
 
                     </button>
@@ -125,9 +175,13 @@ function Navbar() {
                     <button
                         className="menu-toggle"
                         onClick={() =>
-                            setIsMenuOpen(!isMenuOpen)
+                            setIsMenuOpen((currentState) => !currentState)
                         }
-                        aria-label="Toggle navigation menu"
+                        aria-label={
+                            isMenuOpen
+                                ? "Close navigation menu"
+                                : "Open navigation menu"
+                        }
                     >
 
                         {
@@ -143,7 +197,9 @@ function Navbar() {
             </div>
 
         </nav>
+
     )
 }
+
 
 export default Navbar
