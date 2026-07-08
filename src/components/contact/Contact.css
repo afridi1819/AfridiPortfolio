@@ -511,3 +511,13 @@ body.light-mode .contact-info-icon {
     box-shadow:
         0 4px 12px rgba(70, 45, 90, 0.07);
 }
+.contact-error {
+    margin: -8px 0 4px;
+    font-size: 0.85rem;
+    color: #ff6b6b;
+}
+
+.contact-status {
+    margin-top: 10px;
+    text-align: center;
+}

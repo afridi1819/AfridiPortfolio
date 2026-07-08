@@ -11,6 +11,13 @@ function Contact() {
     })
 
 
+    const [status, setStatus] = useState("")
+
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const [errors, setErrors] = useState({})
+
+
     const handleChange = (event) => {
 
         const { name, value } = event.target
@@ -20,36 +27,108 @@ function Contact() {
             [name]: value
         }))
 
+
+        // Remove the error for this field
+        // when the user starts typing again
+
+        setErrors((currentErrors) => ({
+            ...currentErrors,
+            [name]: ""
+        }))
+
     }
 
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
 
         event.preventDefault()
 
+        setIsSubmitting(true)
 
-        const subject =
-            `Portfolio Contact from ${formData.name}`
+        setStatus("")
 
-
-        const body =
-            `Name: ${formData.name}\n\n` +
-            `Email: ${formData.email}\n\n` +
-            `Message:\n${formData.message}`
+        setErrors({})
 
 
-        const gmailUrl =
-            "https://mail.google.com/mail/?view=cm&fs=1" +
-            `&to=${encodeURIComponent("shaikh19afridi@gmail.com")}` +
-            `&su=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`
+        const contactData = {
+
+            name: formData.name,
+
+            email: formData.email,
+
+            subject: `Portfolio Contact from ${formData.name}`,
+
+            message: formData.message
+
+        }
 
 
-        window.open(
-            gmailUrl,
-            "_blank",
-            "noopener,noreferrer"
-        )
+        try {
+
+            const response = await fetch(
+                "http://localhost:8080/api/contacts",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(contactData)
+                }
+            )
+
+
+            // Backend validation error
+
+            if (response.status === 400) {
+
+                const validationErrors =
+                    await response.json()
+
+                setErrors(validationErrors)
+
+                return
+            }
+
+
+            // Other server errors
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Failed to send message"
+                )
+
+            }
+
+
+            setStatus(
+                "Message sent successfully!"
+            )
+
+
+            setFormData({
+                name: "",
+                email: "",
+                message: ""
+            })
+
+
+        } catch (error) {
+
+            console.error(error)
+
+            setStatus(
+                "Unable to send message. Please try again."
+            )
+
+
+        } finally {
+
+            setIsSubmitting(false)
+
+        }
 
     }
 
@@ -89,6 +168,9 @@ function Contact() {
                         onSubmit={handleSubmit}
                     >
 
+
+                        {/* NAME */}
+
                         <input
                             type="text"
                             name="name"
@@ -99,6 +181,19 @@ function Contact() {
                             required
                         />
 
+
+                        {
+                            errors.name && (
+
+                                <p className="contact-error">
+                                    {errors.name}
+                                </p>
+
+                            )
+                        }
+
+
+                        {/* EMAIL */}
 
                         <input
                             type="email"
@@ -111,6 +206,19 @@ function Contact() {
                         />
 
 
+                        {
+                            errors.email && (
+
+                                <p className="contact-error">
+                                    {errors.email}
+                                </p>
+
+                            )
+                        }
+
+
+                        {/* MESSAGE */}
+
                         <textarea
                             name="message"
                             value={formData.message}
@@ -121,9 +229,45 @@ function Contact() {
                         />
 
 
-                        <button type="submit">
-                            Send Message
+                        {
+                            errors.message && (
+
+                                <p className="contact-error">
+                                    {errors.message}
+                                </p>
+
+                            )
+                        }
+
+
+                        {/* SUBMIT BUTTON */}
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                        >
+
+                            {
+                                isSubmitting
+                                    ? "Sending..."
+                                    : "Send Message"
+                            }
+
                         </button>
+
+
+                        {/* SUCCESS / SERVER ERROR MESSAGE */}
+
+                        {
+                            status && (
+
+                                <p className="contact-status">
+                                    {status}
+                                </p>
+
+                            )
+                        }
+
 
                     </form>
 
