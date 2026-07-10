@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./Contact.css"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 
 function Contact() {
@@ -66,7 +67,7 @@ function Contact() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/contacts",
+                `${API_BASE_URL}/api/contacts`,
                 {
                     method: "POST",
 
